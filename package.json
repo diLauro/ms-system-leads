@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "nodemon src/server.ts",
     "build": "sucrase ./src -d ./dist --transforms typescript,imports",
-    "start": "nodemon src/server.ts"
+    "start": "nodemon dist/server.js"
   },
   "engines": {
     "yarn": "^1.22.18"
