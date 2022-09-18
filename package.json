@@ -23,5 +23,8 @@
     "prettier": "^2.7.1",
     "sucrase": "^3.27.0",
     "typescript": "*"
+  },
+  "dependencies": {
+    "all": "^0.0.0"
   }
 }
