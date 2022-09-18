@@ -8,7 +8,7 @@ module.exports = {
   extends: [
     'plugin:@typescript-eslint/recommended',
     'prettier/@typescript-eslint',
-    'standard-with-typescript'],
+    'standard'],
   overrides: [
   ],
   parserOptions: {
