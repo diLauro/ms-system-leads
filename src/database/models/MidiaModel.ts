@@ -1,8 +1,8 @@
 import { DataTypes } from "sequelize";
 import { db } from "../db";
 
-export const UserModel = db.define(
-  "tb_users",
+export const MidiaModel = db.define(
+  "tb_midias",
   {
     id: {
       type: DataTypes.INTEGER,
@@ -10,16 +10,16 @@ export const UserModel = db.define(
       allowNull: false,
       primaryKey: true,
     },
-    email: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    name: {
-      type: DataTypes.STRING,
+    is_active: {
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
   },
   {
     underscored: true,
   }
-  );
+);

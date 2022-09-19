@@ -12,6 +12,7 @@ routes.delete("/users/:userId", UseController.destroy);
 
 routes.post("/domains", DomainController.create);
 routes.get("/domains", DomainController.findAll);
+routes.get("/domains/type/:domainType", DomainController.findType);
 routes.get("/domains/:domainId", DomainController.findOne);
 routes.put("/domains/:domainId", DomainController.update);
 routes.delete("/usdomainsers/:domainId", DomainController.destroy);

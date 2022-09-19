@@ -9,6 +9,18 @@ class DomainController {
       : res.status(204).send();
   }
 
+  async findType(req: Request, res: Response) {
+    const { domainType } = req.params;
+    const domains = await DomainModel.findAll({
+      where: {
+        type_domain: domainType
+      }
+    });
+    return domains.length > 0
+      ? res.status(200).json(domains)
+      : res.status(204).send();
+  }
+
   async findOne(req: Request, res: Response) {
     const { domainId } = req.params;
     const domain = await DomainModel.findOne({
@@ -21,10 +33,11 @@ class DomainController {
   }
 
   async create(req: Request, res: Response) {
-    const { name, cod_domain, is_active } = req.body;
+    const { name, type_domain, cod_domain, is_active } = req.body;
 
     const domain = await DomainModel.create({
       name,
+      type_domain,
       cod_domain,
       is_active,
     });
@@ -34,10 +47,11 @@ class DomainController {
 
   async update(req: Request, res: Response) {
     const { domainId } = req.params;
-    const { name, cod_domain, is_active } = req.body;
+    const { name, type_domain, cod_domain, is_active } = req.body;
     await DomainModel.update(
       {
         name,
+        type_domain,
         cod_domain,
         is_active,
       },
