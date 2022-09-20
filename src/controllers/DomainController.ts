@@ -33,13 +33,13 @@ class DomainController {
   }
 
   async create(req: Request, res: Response) {
-    const { name, type_domain, cod_domain, is_active } = req.body;
+    const { name, type_domain, cod_domain } = req.body;
 
     const domain = await DomainModel.create({
       name,
       type_domain,
       cod_domain,
-      is_active,
+      is_active: true,
     });
 
     return res.status(201).json(domain);
@@ -47,13 +47,12 @@ class DomainController {
 
   async update(req: Request, res: Response) {
     const { domainId } = req.params;
-    const { name, type_domain, cod_domain, is_active } = req.body;
+    const { name, type_domain, cod_domain } = req.body;
     await DomainModel.update(
       {
         name,
         type_domain,
         cod_domain,
-        is_active,
       },
       {
         where: {
