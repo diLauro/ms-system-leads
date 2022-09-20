@@ -21,6 +21,7 @@ export const DomainModel = db.define(
     cod_domain: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
     is_active: {
       type: DataTypes.BOOLEAN,

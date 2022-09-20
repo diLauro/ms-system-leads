@@ -19,7 +19,7 @@ class App {
   }
 
   private async database() {
-    await db.sync();
+    await db.sync({ force: true });
   }
 
   private routes() {

@@ -19,6 +19,10 @@ export const UserModel = db.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    is_active: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
   },
   {
     underscored: true,
