@@ -1,9 +1,9 @@
 import { DataTypes } from "sequelize";
 import { db } from "../db";
-import { SalesmanModel } from "./SalesmanModel";
+import { LeadModel } from "./LeadModel";
 
-export const UserModel = db.define(
-  "tb_users",
+export const LeadPhoneModel = db.define(
+  "tb_lead_phones",
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,11 +11,7 @@ export const UserModel = db.define(
       allowNull: false,
       primaryKey: true,
     },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    name: {
+    phone: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -25,7 +21,11 @@ export const UserModel = db.define(
   }
 );
 
-UserModel.belongsTo(SalesmanModel, {
+LeadPhoneModel.belongsTo(LeadModel, {
   constraints: true,
-  foreignKey: "salesman_id",
-});
+  foreignKey: 'lead_id'
+})
+
+LeadModel.hasMany(LeadPhoneModel, {
+  foreignKey: 'lead_id'
+})

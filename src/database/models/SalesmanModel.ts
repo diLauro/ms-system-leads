@@ -1,19 +1,14 @@
 import { DataTypes } from "sequelize";
 import { db } from "../db";
-import { SalesmanModel } from "./SalesmanModel";
 
-export const UserModel = db.define(
-  "tb_users",
+export const SalesmanModel = db.define(
+  "tb_salesmans",
   {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       allowNull: false,
       primaryKey: true,
-    },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
     },
     name: {
       type: DataTypes.STRING,
@@ -24,8 +19,3 @@ export const UserModel = db.define(
     underscored: true,
   }
 );
-
-UserModel.belongsTo(SalesmanModel, {
-  constraints: true,
-  foreignKey: "salesman_id",
-});
