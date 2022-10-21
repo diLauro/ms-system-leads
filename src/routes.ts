@@ -35,6 +35,7 @@ routes.delete("/users/:userId", UseController.destroy);
 
 routes.post("/midias", MidiaController.create);
 routes.get("/midias", MidiaController.findAll);
+routes.get("/midias/report", MidiaController.report);
 routes.get("/midias/:midiaId", MidiaController.findOne);
 routes.put("/midias/:midiaId", MidiaController.update);
 routes.delete("/midias/:midiaId", MidiaController.destroy);
